@@ -1,11 +1,12 @@
 package peetemuan5;
+
 import java.util.Queue;
 
 public class Priority {
-    
-    public static Node[] setPriority(double[] ratio_array, String []binaryString_array) {
 
-        //put ratio_array values and index in nodeArray
+    public static Node[] setPriority(double[] ratio_array, String[] binaryString_array) {
+
+        // put ratio_array values and index in nodeArray
         Node[] nodeArray = new Node[ratio_array.length];
         for (int i = 0; i < ratio_array.length; i++) {
             String binSt = binaryString_array[i];
@@ -13,7 +14,7 @@ public class Priority {
             nodeArray[i] = new Node(binSt, ratioValue, i);
         }
 
-        //sorting nodes based on ratio_array val
+        // sorting nodes based on ratio_array val
         for (int i = 0; i < nodeArray.length; i++) {
             for (int j = nodeArray.length - 1; j > i; j--) {
                 if (nodeArray[j].ratioValue < nodeArray[j - 1].ratioValue) {
@@ -27,7 +28,7 @@ public class Priority {
         return nodeArray;
     }
 }
-//Node class
+// Node class
 
 class Node {
     String binaryString;
